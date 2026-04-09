@@ -34,17 +34,18 @@ const Cart = () => {
         </div>
 
         {cartItems.length === 0 ? (
-          <div className="text-center py-20 flex flex-col items-center justify-center space-y-8 bg-white rounded-toy shadow-premium border border-slate-50">
-             <div className="w-24 h-24 bg-toy-blue/10 rounded-full flex items-center justify-center">
-                <ShoppingBag className="w-10 h-10 text-toy-blue-dark" />
+          <div className="text-center py-20 flex flex-col items-center justify-center space-y-6 bg-slate-50/50 rounded-toy-xl border-2 border-dashed border-slate-200">
+             <div className="w-20 h-20 bg-toy-blue/10 rounded-full flex items-center justify-center">
+                <ShoppingBag className="w-8 h-8 text-toy-blue" />
              </div>
              <div>
-               <h2 className="text-2xl font-kids font-bold text-slate-800 mb-2">Your Shopping Cart is Empty</h2>
-               <p className="text-slate-500 font-medium max-w-sm mx-auto leading-relaxed text-base">Looks like you haven’t added any toys to your cart yet.</p>
+               <h2 className="text-xl font-kids font-bold text-slate-800 mb-2">Your Shopping Cart is Empty</h2>
+               <p className="text-slate-400 font-medium text-sm max-w-sm mx-auto leading-relaxed">Looks like you haven't added any toys to your cart yet.</p>
              </div>
              <Link to="/shop">
-                <Button className="h-14 px-10 text-lg flex items-center gap-3">
-                  Start Shopping 🚀
+                <Button className="h-12 px-8 text-sm flex items-center gap-2 group">
+                  Start Shopping
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
              </Link>
           </div>
