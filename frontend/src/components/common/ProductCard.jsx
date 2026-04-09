@@ -53,8 +53,8 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* Content */}
-      <div className="p-3 sm:p-5 flex flex-col flex-grow">
-        <div className="flex items-center justify-between mb-2">
+      <div className="p-3 sm:p-4 flex flex-col flex-grow">
+        <div className="flex items-center justify-between mb-1.5">
           <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">{product.category}</span>
           <div className="flex items-center gap-1 text-toy-yellow-dark">
             <Star className="w-3 h-3 fill-current" />
@@ -62,23 +62,28 @@ const ProductCard = ({ product }) => {
           </div>
         </div>
 
-        <Link to={`/product/${product.id}`} className="block mb-2">
+        <Link to={`/product/${product.id}`} className="block mb-1.5">
           <h3 className="font-kids font-bold text-base sm:text-lg text-slate-800 line-clamp-1 group-hover:text-toy-blue transition-colors">
             {product.name}
           </h3>
         </Link>
 
-        <div className="mt-auto flex items-center justify-between gap-x-1 gap-y-2 border-t border-slate-50 pt-2 flex-wrap sm:flex-nowrap">
-          <div className="flex items-center gap-1.5 min-w-0">
-            <span className="bg-slate-50 text-slate-500 text-[9px] font-black uppercase px-2 py-0.5 rounded-md shrink-0 border border-slate-100">{product.age}</span>
-            <span className="font-kids font-bold text-sm lg:text-lg text-slate-800 tracking-tighter leading-none shrink-0">₹{product.price}</span>
+        <div className="mt-auto pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+          <div className="flex flex-col gap-0.5 min-w-0">
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{product.age}</span>
+            <div className="flex items-center gap-2">
+              <span className="font-kids font-black text-lg lg:text-xl text-slate-900 tracking-tighter leading-none">₹{product.price}</span>
+              {product.oldPrice && (
+                <span className="text-xs text-slate-400 line-through decoration-toy-coral/50 font-bold tracking-tighter">₹{product.oldPrice}</span>
+              )}
+            </div>
           </div>
 
           <button
             onClick={() => dispatch(addToCart(product))}
-            className="w-9 h-9 lg:w-10 lg:h-10 bg-toy-blue/10 rounded-xl flex items-center justify-center text-toy-blue hover:bg-toy-blue hover:text-white transition-all transform active:scale-95 shadow-sm shrink-0"
+            className="w-10 h-10 lg:w-12 lg:h-12 bg-toy-blue text-white rounded-2xl flex items-center justify-center shadow-lg shadow-toy-blue/20 hover:bg-toy-blue-dark transition-all duration-300 transform active:scale-90 hover:-translate-y-1 group/cart shrink-0"
           >
-            <ShoppingCart className="w-4.5 h-4.5 lg:w-5 lg:h-5" />
+            <ShoppingCart className="w-5 h-5 lg:w-6 lg:h-6 transition-transform group-hover/cart:rotate-[-12deg]" />
           </button>
         </div>
       </div>

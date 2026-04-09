@@ -66,7 +66,7 @@ export const products = [
     image: '/rings.png',
     rating: 4.8,
     reviews: 215,
-    age: '6m+ Months',
+    age: '6+ Months',
     description: 'Classic developmental rings for coordination and motor skills.',
   },
   {
