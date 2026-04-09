@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-slate-800 font-kids antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-toy-blue text-white font-semibold rounded-toy transition-all hover:bg-toy-blue-dark active:scale-95 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-toy-yellow text-slate-800 font-semibold rounded-toy transition-all hover:bg-toy-yellow-dark active:scale-95 shadow-sm hover:shadow-md;
+  }
+
+  .card-toy {
+    @apply bg-white rounded-toy shadow-soft hover:shadow-premium transition-all duration-300;
+  }
+
+  .premium-gradient {
+    background: linear-gradient(135deg, rgba(227, 242, 253, 0.5) 0%, rgba(255, 249, 196, 0.5) 50%, rgba(232, 245, 232, 0.5) 100%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-toy-blue/20 rounded-full hover:bg-toy-blue/40;
+}
+
+/* Custom Swiper Styles (Global Overrides) */
+.swiper-pagination-bullet {
+  @apply bg-toy-blue opacity-50 transition-all;
+}
+.swiper-pagination-bullet-active {
+  @apply bg-toy-blue-dark opacity-100 scale-125;
+}
+
+@keyframes wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-wave-slow {
+  animation: wave 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
