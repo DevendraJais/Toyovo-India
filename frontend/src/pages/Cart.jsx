@@ -64,45 +64,48 @@ const Cart = () => {
                   
                   <div className="divide-y divide-slate-50">
                     {cartItems.map(item => (
-                       <div key={item.id} className="grid md:grid-cols-12 gap-6 items-center px-8 py-8 group relative">
-                          <div className="col-span-6 flex gap-6 items-center">
-                             <div className="w-20 h-28 lg:w-24 lg:h-32 rounded-xl overflow-hidden bg-slate-50 shrink-0 shadow-sm border-2 border-white hover:border-toy-blue/20 transition-all">
-                                <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-                             </div>
-                             <div className="space-y-2">
-                                <span className="text-[9px] font-black text-toy-blue uppercase tracking-widest leading-none">{item.category}</span>
-                                <h3 className="text-xl font-kids font-bold text-slate-800 group-hover:text-toy-blue transition-colors leading-tight">{item.name}</h3>
-                                <p className="text-[10px] font-bold text-slate-400 leading-relaxed uppercase">Age: {item.age}</p>
-                             </div>
-                          </div>
-                          
-                          <div className="col-span-2 text-center font-bold text-lg text-slate-400">
-                             ${item.price.toFixed(2)}
-                          </div>
+                        <div key={item.id} className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 items-center px-4 md:px-10 py-5 md:py-8 group relative border-b border-slate-50 md:border-0 last:border-b-0">
+                           <div className="md:col-span-6 flex gap-4 md:gap-6 items-center">
+                              <div className="w-16 h-20 md:w-24 md:h-32 rounded-xl overflow-hidden bg-slate-50 shrink-0 shadow-sm border border-slate-100">
+                                 <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                              </div>
+                              <div className="space-y-1 md:space-y-2">
+                                 <span className="text-[8px] md:text-[9px] font-black text-toy-blue uppercase tracking-widest leading-none">{item.category}</span>
+                                 <h3 className="text-base md:text-xl font-kids font-bold text-slate-800 group-hover:text-toy-blue transition-colors leading-tight">{item.name}</h3>
+                                 <p className="text-[9px] md:text-[10px] font-bold text-slate-400 leading-relaxed uppercase">Age: {item.age}</p>
+                              </div>
+                           </div>
+                           
+                           {/* Price, Quantity, Total Row for Mobile */}
+                           <div className="flex items-center justify-between md:grid md:grid-cols-6 md:col-span-6 w-full">
+                              <div className="md:col-span-2 md:text-center font-bold text-xs md:text-base text-slate-400">
+                                 ${item.price.toFixed(2)}
+                              </div>
 
-                          <div className="col-span-2 flex justify-center">
-                             <div className="flex items-center gap-3 bg-slate-50 rounded-xl p-1 border border-slate-100">
-                                <button onClick={() => dispatch(decreaseCart(item))} className="w-8 h-8 flex items-center justify-center hover:bg-white rounded-lg text-slate-400">
-                                   <Minus className="w-3.5 h-3.5" />
-                                </button>
-                                <span className="font-bold text-base w-4 text-center">{item.cartQuantity}</span>
-                                <button onClick={() => dispatch(addToCart(item))} className="w-8 h-8 flex items-center justify-center hover:bg-white rounded-lg text-slate-400">
-                                   <Plus className="w-3.5 h-3.5" />
-                                </button>
-                             </div>
-                          </div>
+                              <div className="md:col-span-2 flex justify-center">
+                                 <div className="flex items-center gap-2 md:gap-3 bg-slate-50 rounded-xl p-0.5 md:p-1 border border-slate-100 scale-90 md:scale-100">
+                                    <button onClick={() => dispatch(decreaseCart(item))} className="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center hover:bg-white rounded-lg text-slate-400 transition-colors">
+                                       <Minus className="w-3 h-3 md:w-3.5 md:h-3.5" />
+                                    </button>
+                                    <span className="font-bold text-sm md:text-base w-4 text-center">{item.cartQuantity}</span>
+                                    <button onClick={() => dispatch(addToCart(item))} className="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center hover:bg-white rounded-lg text-slate-400 transition-colors">
+                                       <Plus className="w-3 h-3 md:w-3.5 md:h-3.5" />
+                                    </button>
+                                 </div>
+                              </div>
 
-                          <div className="col-span-2 text-right font-kids font-bold text-xl text-slate-800">
-                             ${(item.price * item.cartQuantity).toFixed(2)}
-                          </div>
+                              <div className="md:col-span-2 text-right font-kids font-bold text-base md:text-lg text-slate-800">
+                                 ${(item.price * item.cartQuantity).toFixed(2)}
+                              </div>
+                           </div>
 
-                          <button 
-                             onClick={() => dispatch(removeFromCart(item))}
-                             className="absolute top-8 right-10 p-2 text-toy-coral opacity-0 group-hover:opacity-100 transition-opacity hover:scale-110 active:scale-95"
-                          >
-                             <Trash2 className="w-5 h-5" />
-                          </button>
-                       </div>
+                           <button 
+                              onClick={() => dispatch(removeFromCart(item))}
+                              className="absolute top-4 md:top-8 right-4 md:right-10 p-2 text-toy-coral opacity-0 group-hover:opacity-100 md:opacity-0 transition-opacity hover:scale-110 active:scale-95"
+                           >
+                              <Trash2 className="w-4 h-4 md:w-5 md:h-5" />
+                           </button>
+                        </div>
                     ))}
                   </div>
                </div>

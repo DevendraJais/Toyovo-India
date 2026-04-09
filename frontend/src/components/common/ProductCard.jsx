@@ -72,7 +72,7 @@ const ProductCard = ({ product }) => {
           <div className="flex flex-col gap-0.5 min-w-0">
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{product.age}</span>
             <div className="flex items-center gap-2">
-              <span className="font-kids font-black text-lg lg:text-xl text-slate-900 tracking-tighter leading-none">₹{product.price}</span>
+              <span className="font-kids font-black text-base lg:text-lg text-slate-900 tracking-tighter leading-none">₹{product.price}</span>
               {product.oldPrice && (
                 <span className="text-xs text-slate-400 line-through decoration-toy-coral/50 font-bold tracking-tighter">₹{product.oldPrice}</span>
               )}
