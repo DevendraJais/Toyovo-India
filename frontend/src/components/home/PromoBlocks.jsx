@@ -3,7 +3,7 @@ import { ShoppingBag, Truck, Gift } from 'lucide-react';
 
 const PromoBlocks = () => {
   return (
-    <section className="pt-16 lg:pt-24 bg-white">
+    <section className="pt-6 lg:pt-8 bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-8">
 

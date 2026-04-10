@@ -30,12 +30,14 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="pt-16 lg:pt-24 bg-toy-blue/5">
+    <section className="pt-12 lg:pt-16 pb-12 bg-[#F9F9F9]">
       <div className="container-custom">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="font-kids font-bold text-4xl text-slate-800 mb-4 tracking-tight">Parent’s Love 🥰</h2>
-          <p className="text-slate-500 font-medium text-lg leading-relaxed">
-            See why thousands of parents trust ToyStore for their children's playtime.
+          <h2 className="text-2xl lg:text-3xl text-[#222222] font-semibold tracking-tight mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+            What parents are saying
+          </h2>
+          <p className="text-gray-500 text-sm md:text-base">
+            See why thousands of parents trust Toyovo India for their children's playtime.
           </p>
         </div>
 

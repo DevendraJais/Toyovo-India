@@ -67,3 +67,8 @@
 .animate-marquee {
   animation: marquee 20s linear infinite;
 }
+
+/* Smooth linear transition for category marquee */
+.marquee-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
